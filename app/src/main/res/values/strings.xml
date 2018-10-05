@@ -1,0 +1,47 @@
+<resources>
+    <!-- Resources -->
+    <string name="app_name">Horecafy</string>
+
+    <!-- Configuration -->
+    <!--<string name="API_URL">http://192.168.0.158:3000/api/v1/</string>
+    <string name="IMAGE_URL">http://192.168.0.158:3000/images/</string>-->
+
+    <!--LIVE-->
+    <!--<string name="API_URL">https://horecafyapi.azurewebsites.net/api/v1/</string>-->
+    <!--<string name="IMAGE_URL">https://horecafyapi.azurewebsites.net/images/</string>-->
+
+    <!--TEST-->
+    <string name="API_URL">http://demo.aipxperts.com:4201/api/v1/</string>
+    <string name="IMAGE_URL">http://demo.aipxperts.com:4201/images/categories/</string>
+    <string name="BASE_IMAGE_URL">http://demo.aipxperts.com:4201/uploads/</string>
+
+    <!--smarrerof@gmail.com and 12345678-->
+    <string name="login_id">arif@gmail.com</string>
+    <string name="login_password">aipX@1234</string>
+    <string name="title_activity_customer_create_your_lists">Crea tus listas</string>
+    <string name="title_activity_customer_search_products">Buscar Productos</string>
+    <string name="title_activity_customer_make_an_order">Hacer un pedido</string>
+    <string name="title_activity_customer_invite_distributor">Invitar a distribuidor</string>
+    <string name="title_activity_customer_commercial_visits">Visitas comerciales</string>
+    <string name="title_activity_customer_review_offers">Revisar ofertas</string>
+    <!--<string name="customer_login"></string>
+    <string name="customer_pass"></string>-->
+
+    <string name="demand_success_message_one">vamos a buscar tu petición y nos pondremos en contacto contigo lo más pronto posible.</string>
+    <string name="demand_success_message_two">iGracias por confiar en Horecafy!</string>
+    <string name="demand_success_btn_text">volver al menú principal</string>
+
+    <string name="selected_item">Selected item:</string>
+    <string name="selected">Selected Item :</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="optional">opcional</string>
+
+    <string name="logout_msg">¿Realmente quieres desconectarte?</string>
+    <string name="no">No</string>
+    <string name="yes">sí</string>
+    <string name="NO_INTERNET_CONNECTION">No Internet Found</string>
+    <string name="ImageBaseURL">http://demo.aipxperts.com:4201/uploads/</string>
+
+</resources>

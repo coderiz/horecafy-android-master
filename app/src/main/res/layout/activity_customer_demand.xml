@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageCategory"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/app_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/ic_account_box_black_24dp" />
+
+            <TextView
+                android:id="@+id/textCategory"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                app:layout_constraintBottom_toBottomOf="@+id/imageCategory"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageCategory"
+                app:layout_constraintTop_toTopOf="@+id/imageCategory"
+                tools:text="TextView" />
+
+            <TextView
+                android:id="@+id/textFamily"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageCategory" />
+
+            <TextView
+                android:id="@+id/textBrand"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="Marca"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textFamily" />
+
+            <EditText
+                android:id="@+id/editBrand"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:ems="10"
+                android:hint="@string/optional"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textBrand" />
+
+            <TextView
+                android:id="@+id/textTypeOfFormat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Tipo de formato"
+                app:layout_constraintEnd_toEndOf="@+id/editBrand"
+                app:layout_constraintStart_toStartOf="@+id/editBrand"
+                app:layout_constraintTop_toBottomOf="@+id/editBrand" />
+
+            <Spinner
+                android:id="@+id/spinnerTypeOfFormat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/textTypeOfFormat"
+                app:layout_constraintStart_toStartOf="@+id/textTypeOfFormat"
+                app:layout_constraintTop_toBottomOf="@+id/textTypeOfFormat" />
+
+            <TextView
+                android:id="@+id/textQuantityPerMonth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Consumo mes"
+                app:layout_constraintEnd_toEndOf="@+id/spinnerTypeOfFormat"
+                app:layout_constraintStart_toStartOf="@+id/spinnerTypeOfFormat"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerTypeOfFormat" />
+
+            <EditText
+                android:id="@+id/editQuantityPerMonth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/optional"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="@+id/textQuantityPerMonth"
+                app:layout_constraintStart_toStartOf="@+id/textQuantityPerMonth"
+                app:layout_constraintTop_toBottomOf="@+id/textQuantityPerMonth" />
+
+            <TextView
+                android:id="@+id/textTargetPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Precio objetivo"
+                app:layout_constraintEnd_toEndOf="@+id/editQuantityPerMonth"
+                app:layout_constraintStart_toStartOf="@+id/editQuantityPerMonth"
+                app:layout_constraintTop_toBottomOf="@+id/editQuantityPerMonth" />
+
+            <EditText
+                android:id="@+id/editTargetPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/optional"
+                android:inputType="numberDecimal"
+                app:layout_constraintEnd_toEndOf="@+id/textTargetPrice"
+                app:layout_constraintStart_toStartOf="@+id/textTargetPrice"
+                app:layout_constraintTop_toBottomOf="@+id/textTargetPrice" />
+
+            <TextView
+                android:id="@+id/textFormat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Packaging"
+                app:layout_constraintEnd_toEndOf="@+id/editTargetPrice"
+                app:layout_constraintStart_toStartOf="@+id/editTargetPrice"
+                app:layout_constraintTop_toBottomOf="@+id/editTargetPrice" />
+
+            <EditText
+                android:id="@+id/editFormat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/optional"
+                app:layout_constraintEnd_toEndOf="@+id/textFormat"
+                app:layout_constraintStart_toStartOf="@+id/textFormat"
+                app:layout_constraintTop_toBottomOf="@+id/textFormat" />
+
+            <TextView
+                android:id="@+id/textComments"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:hint="@string/optional"
+                android:text="Comentarios"
+                app:layout_constraintEnd_toEndOf="@+id/editFormat"
+                app:layout_constraintStart_toStartOf="@+id/editFormat"
+                app:layout_constraintTop_toBottomOf="@+id/editFormat" />
+
+            <EditText
+                android:id="@+id/editComments"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/textComments"
+                app:layout_constraintStart_toStartOf="@+id/textComments"
+                app:layout_constraintTop_toBottomOf="@+id/textComments" />
+
+            <Button
+                android:id="@+id/buttonSave"
+                style="@style/Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="Guardar"
+                app:layout_constraintEnd_toEndOf="@+id/editComments"
+                app:layout_constraintStart_toStartOf="@+id/editComments"
+                app:layout_constraintTop_toBottomOf="@+id/editComments" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,41 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/canvasWithCardViewBackgroundColor"
+    android:padding="5dp"
+    tools:context="app.horecafy.com.activities.customers.fragments.CustomerNotificationsFragment">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvCustomerNotificationsList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/rlNoNotificationsAvailable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="No hay notificaciones disponibles" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlProgressBarCustomersNotifications"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true" />
+    </RelativeLayout>
+
+</FrameLayout>

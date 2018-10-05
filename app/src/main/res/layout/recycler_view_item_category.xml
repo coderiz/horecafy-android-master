@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/fl_category_parent"
+    android:layout_height="wrap_content">
+
+    <CheckBox
+        android:id="@+id/tv_categories_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_margin="3dp"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_total_families_count"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_gravity="end"
+        android:layout_margin="3dp"
+        android:background="@drawable/total_families_badge_count"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="45+"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <app.horecafy.com.util.SquareRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="24dp"
+            app:srcCompat="@drawable/ic_account_box_black_24dp"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="false"
+            android:text="text"
+            android:textAlignment="center" />
+
+    </app.horecafy.com.util.SquareRelativeLayout>
+</FrameLayout>

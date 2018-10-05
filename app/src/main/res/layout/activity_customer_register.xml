@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+         <!--   <TextView
+                android:id="@+id/textVat"
+                android:text=""
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editVat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/textVat"
+                app:layout_constraintStart_toStartOf="@+id/textVat"
+                app:layout_constraintTop_toBottomOf="@+id/textVat" />-->
+
+            <TextView
+                android:id="@+id/textMail"
+                android:text="Correo electrónico"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editMail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                app:layout_constraintEnd_toEndOf="@+id/textMail"
+                app:layout_constraintStart_toStartOf="@+id/textMail"
+                app:layout_constraintTop_toBottomOf="@+id/textMail" />
+
+            <TextView
+                android:id="@+id/textPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Contraseña"
+                app:layout_constraintEnd_toEndOf="@+id/editMail"
+                app:layout_constraintStart_toStartOf="@+id/editMail"
+                app:layout_constraintTop_toBottomOf="@+id/editMail" />
+
+            <EditText
+                android:id="@+id/editPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                app:layout_constraintEnd_toEndOf="@+id/textPassword"
+                app:layout_constraintStart_toStartOf="@+id/textPassword"
+                app:layout_constraintTop_toBottomOf="@+id/textPassword" />
+
+            <TextView
+                android:id="@+id/textRepeatPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Repita la contraseña"
+                app:layout_constraintEnd_toEndOf="@+id/editPassword"
+                app:layout_constraintStart_toStartOf="@+id/editPassword"
+                app:layout_constraintTop_toBottomOf="@+id/editPassword" />
+
+            <EditText
+                android:id="@+id/editRepeatPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                app:layout_constraintEnd_toEndOf="@+id/textRepeatPassword"
+                app:layout_constraintStart_toStartOf="@+id/textRepeatPassword"
+                app:layout_constraintTop_toBottomOf="@+id/textRepeatPassword" />
+
+            <TextView
+                android:id="@+id/textName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Nombre de establecimiento"
+                app:layout_constraintEnd_toEndOf="@+id/editRepeatPassword"
+                app:layout_constraintStart_toStartOf="@+id/editRepeatPassword"
+                app:layout_constraintTop_toBottomOf="@+id/editRepeatPassword" />
+
+            <EditText
+                android:id="@+id/editName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/textName"
+                app:layout_constraintStart_toStartOf="@+id/textName"
+                app:layout_constraintTop_toBottomOf="@+id/textName" />
+
+            <TextView
+                android:id="@+id/textTypeOfBusiness"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Tipo de establecimiento"
+                app:layout_constraintEnd_toEndOf="@+id/editName"
+                app:layout_constraintStart_toStartOf="@+id/editName"
+                app:layout_constraintTop_toBottomOf="@+id/editName" />
+
+            <Spinner
+                android:id="@+id/spinnerTypeOfBusiness"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/textTypeOfBusiness"
+                app:layout_constraintStart_toStartOf="@+id/textTypeOfBusiness"
+                app:layout_constraintTop_toBottomOf="@+id/textTypeOfBusiness" />
+
+            <TextView
+                android:id="@+id/textContactName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Nombre de contacto"
+                app:layout_constraintEnd_toEndOf="@+id/spinnerTypeOfBusiness"
+                app:layout_constraintStart_toStartOf="@+id/spinnerTypeOfBusiness"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerTypeOfBusiness" />
+
+            <EditText
+                android:id="@+id/editContactName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/textContactName"
+                app:layout_constraintStart_toStartOf="@+id/textContactName"
+                app:layout_constraintTop_toBottomOf="@+id/textContactName" />
+
+            <TextView
+                android:id="@+id/textContacMobile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Teléfono de contacto"
+                app:layout_constraintEnd_toEndOf="@+id/editContactName"
+                app:layout_constraintStart_toStartOf="@+id/editContactName"
+                app:layout_constraintTop_toBottomOf="@+id/editContactName" />
+
+            <EditText
+                android:id="@+id/editContactMobile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/textContacMobile"
+                app:layout_constraintStart_toStartOf="@+id/textContacMobile"
+                app:layout_constraintTop_toBottomOf="@+id/textContacMobile" />
+
+            <TextView
+                android:id="@+id/textAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Dirección"
+                app:layout_constraintEnd_toEndOf="@+id/editContactMobile"
+                app:layout_constraintStart_toStartOf="@+id/editContactMobile"
+                app:layout_constraintTop_toBottomOf="@+id/editContactMobile" />
+
+            <EditText
+                android:id="@+id/editAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/textAddress"
+                app:layout_constraintStart_toStartOf="@+id/textAddress"
+                app:layout_constraintTop_toBottomOf="@+id/textAddress" />
+
+            <TextView
+                android:id="@+id/textCity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Ciudad"
+                app:layout_constraintEnd_toEndOf="@+id/editAddress"
+                app:layout_constraintStart_toStartOf="@+id/editAddress"
+                app:layout_constraintTop_toBottomOf="@+id/editAddress" />
+
+            <EditText
+                android:id="@+id/editCity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/textCity"
+                app:layout_constraintStart_toStartOf="@+id/textCity"
+                app:layout_constraintTop_toBottomOf="@+id/textCity" />
+
+            <TextView
+                android:id="@+id/textZipCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Código postal"
+                app:layout_constraintEnd_toEndOf="@+id/editCity"
+                app:layout_constraintStart_toStartOf="@+id/editCity"
+                app:layout_constraintTop_toBottomOf="@+id/editCity" />
+
+            <EditText
+                android:id="@+id/editZipCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="@+id/textZipCode"
+                app:layout_constraintStart_toStartOf="@+id/textZipCode"
+                app:layout_constraintTop_toBottomOf="@+id/textZipCode" />
+
+            <TextView
+                android:id="@+id/textProvince"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Provincia"
+                app:layout_constraintEnd_toEndOf="@+id/editZipCode"
+                app:layout_constraintStart_toStartOf="@+id/editZipCode"
+                app:layout_constraintTop_toBottomOf="@+id/editZipCode" />
+
+            <EditText
+                android:id="@+id/editProvince"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:cursorVisible="false"
+                android:editable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                app:layout_constraintEnd_toEndOf="@+id/textProvince"
+                app:layout_constraintStart_toStartOf="@+id/textProvince"
+                app:layout_constraintTop_toBottomOf="@+id/textProvince" />
+
+          <!--  <TextView
+                android:id="@+id/textCountry"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="País"
+                app:layout_constraintEnd_toEndOf="@+id/editProvince"
+                app:layout_constraintStart_toStartOf="@+id/editProvince"
+                app:layout_constraintTop_toBottomOf="@+id/editProvince" />
+
+            <EditText
+                android:id="@+id/editCountry"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/textCountry"
+                app:layout_constraintStart_toStartOf="@+id/textCountry"
+                app:layout_constraintTop_toBottomOf="@+id/textCountry" />-->
+
+            <Button
+                android:id="@+id/buttonSave"
+                style="@style/Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Crear cuenta"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editProvince" />
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true" />
+    </RelativeLayout>
+
+</RelativeLayout>
