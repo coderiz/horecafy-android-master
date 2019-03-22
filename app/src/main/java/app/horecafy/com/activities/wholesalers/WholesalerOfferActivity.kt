@@ -160,12 +160,12 @@ class WholesalerOfferActivity : AppCompatActivity() {
                 OfferService.create(this, offer) { status, data, error ->
                     UiHelpers.hideProgessBar(window, progressBar)
                     if (status) {
-                        Log.d(Constants.TAG, "offer After : : "+ data!!.id)
+                        Log.d(Constants.TAG, "offer After : : " + data!!.id)
                         if (!imagePath1.equals("") || !imagePath2.equals("") || !imagePath3.equals("") || !videoPath.equals("")) {
-                           Log.e("PATH","11111111111: "+ imagePath1)
-                           Log.e("PATH","22222222222: "+ imagePath2)
-                           Log.e("PATH","33333333333: "+ imagePath3)
-                           Log.e("PATH","44444444444: "+ videoPath)
+                            Log.e("PATH", "11111111111: " + imagePath1)
+                            Log.e("PATH", "22222222222: " + imagePath2)
+                            Log.e("PATH", "33333333333: " + imagePath3)
+                            Log.e("PATH", "44444444444: " + videoPath)
                             UploadImageVideo(data!!.id)
                         } else {
                             val intent = WholesalerMakeOfferThanks.intent(this@WholesalerOfferActivity)
@@ -178,47 +178,48 @@ class WholesalerOfferActivity : AppCompatActivity() {
             }
         })
     }
+
     @RequiresApi(Build.VERSION_CODES.KITKAT)
     private fun UploadImageVideo(offerid: String?) {
         UiHelpers.showProgessBar(window, progressBar)
         var bodyvideo: MultipartBody.Part? = null
         val partsList = ArrayList<MultipartBody.Part>()
         val imageArray = ArrayList<String>()
-        if (!imagePath1.equals("")){
+        if (!imagePath1.equals("")) {
             imageArray.add(imagePath1)
         }
-        if (!imagePath2.equals("")){
+        if (!imagePath2.equals("")) {
             imageArray.add(imagePath2)
         }
-        if (!imagePath3.equals("")){
+        if (!imagePath3.equals("")) {
             imageArray.add(imagePath3)
         }
-       /* if(imagePath1!=null) {
-            val file = File(imagePath1)
-            val reqFile = RequestBody.create(MediaType.parse("image*//*"), file)
+        /* if(imagePath1!=null) {
+             val file = File(imagePath1)
+             val reqFile = RequestBody.create(MediaType.parse("image*//*"), file)
             bodyimage = MultipartBody.Part.createFormData("images", file.getName(), reqFile)
         }*/
         if (imageArray.size > 0) {
             for (index in imageArray.indices) {
-                Log.e("AddClaim", "88  : : "+imageArray.indices)
+                Log.e("AddClaim", "88  : : " + imageArray.indices)
                 Log.e("AddClaim", "88  " + imageArray.get(index))
                 partsList.add(prepareFilePart("images", imageArray.get(index)))
             }
-        }else{
+        } else {
             Log.e("AddClaim", "88  : : Zero Array")
         }
 
-        if(!videoPath.equals("")){
+        if (!videoPath.equals("")) {
             val file = File(videoPath)
             val reqFile = RequestBody.create(MediaType.parse("video/*"), file)
             bodyvideo = MultipartBody.Part.createFormData("video", file.getName(), reqFile)
         }
-        Log.e("AAAAAAAAAAAAAA","offerid: "+offerid)
-        Log.e("ADDDDD", "22  : : NOT ZERO : "+imageArray.size)
+        Log.e("AAAAAAAAAAAAAA", "offerid: " + offerid)
+        Log.e("ADDDDD", "22  : : NOT ZERO : " + imageArray.size)
         val apiService = ApiClient.getClient(this).create(APIService::class.java)
 
         //val call = apiService.UpdateProfile(offerid,bodyimage,bodyvideo)
-        val call = apiService.UploadArray(offerid,partsList,bodyvideo)
+        val call = apiService.UploadArray(offerid, partsList, bodyvideo)
 
         call.enqueue(object : Callback<ResponseBody> {
 
@@ -276,6 +277,7 @@ class WholesalerOfferActivity : AppCompatActivity() {
         val reqFile = RequestBody.create(MediaType.parse("image/*"), file)
         return MultipartBody.Part.createFormData(partName, file.getName(), reqFile)
     }
+
     private fun showPictureDialog() {
         val pictureDialog = AlertDialog.Builder(this)
         pictureDialog.setTitle("Seleccione la acción")
@@ -397,7 +399,7 @@ class WholesalerOfferActivity : AppCompatActivity() {
                             if (imgPOS == 1) {
                                 img_f!!.setImageBitmap(bitmap)
                                 imagePath1 = saveImage(bitmap)
-                              //  imagePath1 = getPath1(contentURI)
+                                //  imagePath1 = getPath1(contentURI)
                             } else if (imgPOS == 2) {
                                 img_s!!.setImageBitmap(bitmap)
                                 imagePath2 = saveImage(bitmap)
@@ -494,7 +496,7 @@ class WholesalerOfferActivity : AppCompatActivity() {
                 vid_f.setImageBitmap(bitmap)
 
                 if (bitmap != null)
-                    thumbFile = bitmapToFile(this@WholesalerOfferActivity,bitmap)
+                    thumbFile = bitmapToFile(this@WholesalerOfferActivity, bitmap)
 
             } else {
                 UiHelpers.hideProgessBar(window, progressBar)
@@ -502,40 +504,40 @@ class WholesalerOfferActivity : AppCompatActivity() {
         }
     }
 
-   /* fun bitmapToFile(context: Context,bmp: Bitmap): File? {
-        try {
-            val REQUIRED_SIZE = 200
-            val bos = ByteArrayOutputStream(REQUIRED_SIZE)
-            bmp.compress(Bitmap.CompressFormat.PNG, 100, bos)
-            val bArr = bos.toByteArray()
-            bos.flush()
-            bos.close()
-            val timestemp = System.currentTimeMillis() / 100
-            val file_name = "image_" + timestemp.toString() + ".png"
-            val fos = openFileOutput(file_name, Context.MODE_PRIVATE)
-            fos.write(bArr)
-            fos.flush()
-            fos.close()
-            val mFile = File(getFilesDir().getAbsolutePath(), file_name)
-            return mFile
-        } catch (e: FileNotFoundException) {
-            e.printStackTrace()
-            return null
-        } catch (e: IOException) {
-            e.printStackTrace()
-            return null
-        }
+    /* fun bitmapToFile(context: Context,bmp: Bitmap): File? {
+         try {
+             val REQUIRED_SIZE = 200
+             val bos = ByteArrayOutputStream(REQUIRED_SIZE)
+             bmp.compress(Bitmap.CompressFormat.PNG, 100, bos)
+             val bArr = bos.toByteArray()
+             bos.flush()
+             bos.close()
+             val timestemp = System.currentTimeMillis() / 100
+             val file_name = "image_" + timestemp.toString() + ".png"
+             val fos = openFileOutput(file_name, Context.MODE_PRIVATE)
+             fos.write(bArr)
+             fos.flush()
+             fos.close()
+             val mFile = File(getFilesDir().getAbsolutePath(), file_name)
+             return mFile
+         } catch (e: FileNotFoundException) {
+             e.printStackTrace()
+             return null
+         } catch (e: IOException) {
+             e.printStackTrace()
+             return null
+         }
 
-    }*/
+     }*/
 
-  /*  private fun try2CreateCompressDir() {
-        var f = File(Environment.getExternalStorageDirectory(), File.separator + APP_DIR)
-        f.mkdirs()
-        f = File(Environment.getExternalStorageDirectory(), File.separator + APP_DIR + COMPRESSED_VIDEOS_DIR)
-        f.mkdirs()
-        f = File(Environment.getExternalStorageDirectory(), File.separator + APP_DIR + TEMP_DIR)
-        f.mkdirs()
-    }*/
+    /*  private fun try2CreateCompressDir() {
+          var f = File(Environment.getExternalStorageDirectory(), File.separator + APP_DIR)
+          f.mkdirs()
+          f = File(Environment.getExternalStorageDirectory(), File.separator + APP_DIR + COMPRESSED_VIDEOS_DIR)
+          f.mkdirs()
+          f = File(Environment.getExternalStorageDirectory(), File.separator + APP_DIR + TEMP_DIR)
+          f.mkdirs()
+      }*/
 
     private fun saveImage(myBitmap: Bitmap?): String {
 

@@ -41,7 +41,4 @@
             app:pageColor="#FF0000"
             app:snap="false" />
     </RelativeLayout>
-
-
-
 </LinearLayout>

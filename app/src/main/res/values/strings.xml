@@ -11,10 +11,14 @@
     <!--<string name="IMAGE_URL">https://horecafyapi.azurewebsites.net/images/</string>-->
 
     <!--TEST-->
-    <string name="API_URL">http://demo.aipxperts.com:4201/api/v1/</string>
-    <string name="IMAGE_URL">http://demo.aipxperts.com:4201/images/categories/</string>
-    <string name="BASE_IMAGE_URL">http://demo.aipxperts.com:4201/uploads/</string>
+    <!-- <string name="API_URL">http://demo.aipxperts.com:4201/api/v1/</string>
+     <string name="IMAGE_URL">http://demo.aipxperts.com:4201/images/categories/</string>
+     <string name="BASE_IMAGE_URL">http://demo.aipxperts.com:4201/uploads/</string>-->
 
+    <string name="API_URL">http://app.horecafy.com/api/v1/</string>
+    <string name="IMAGE_URL">http://app.horecafy.com/images/categories/</string>
+    <string name="BASE_IMAGE_URL">http://app.horecafy.com/uploads/</string>
+    <!--given by Kaushal sir, D:12/3/2019-->
     <!--smarrerof@gmail.com and 12345678-->
     <string name="login_id">arif@gmail.com</string>
     <string name="login_password">aipX@1234</string>
@@ -42,6 +46,6 @@
     <string name="no">No</string>
     <string name="yes">sí</string>
     <string name="NO_INTERNET_CONNECTION">No Internet Found</string>
-    <string name="ImageBaseURL">http://demo.aipxperts.com:4201/uploads/</string>
+    <string name="ImageBaseURL">http://app.horecafy.com/uploads/</string>
 
 </resources>

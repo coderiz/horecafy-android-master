@@ -16,14 +16,23 @@ android {
         applicationId "app.horecafy.com"
         minSdkVersion 17
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        release {
+            storeFile file("/home/aipxperts/Aipxperts/Apurv/horecafy-android-master/keystore.jks")
+            storePassword "app.horecafy.com"
+            keyAlias "app.horecafy.com"
+            keyPassword "app.horecafy.com"
+        }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
         debug {
             applicationIdSuffix '.dev'

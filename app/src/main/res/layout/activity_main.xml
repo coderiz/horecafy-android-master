@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#017B32"
     tools:context="app.horecafy.com.activities.MainActivity">
 
     <ImageView
@@ -16,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/main_activity_background" />
+        app:srcCompat="@drawable/welcome" />
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -31,23 +32,27 @@
 
         <Button
             android:id="@+id/buttonHoreca"
+            style="@style/Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="4dp"
             android:layout_weight="1"
+            android:background="@color/white"
+            android:textColor="#017B32"
             android:text="¿Eres Distribuidor"
-            style="@style/Button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/buttonCustomer"
             android:layout_width="0dp"
+            style="@style/Button"
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
             android:layout_weight="1"
+            android:background="@color/white"
+            android:textColor="#017B32"
             android:text="¿Eres Restaurador?"
-            style="@style/Button"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

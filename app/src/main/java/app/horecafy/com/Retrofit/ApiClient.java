@@ -21,7 +21,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
   //  public static final String BASE_URL = "http://demo.aipxperts.com:4201/api/v1/offer/";
-    public static final String BASE_URL = "http://demo.aipxperts.com:4201/api/v1/";
+  //  public static final String BASE_URL = "http://demo.aipxperts.com:4201/api/v1/";
+
+    public static final String BASE_URL = "http://app.horecafy.com/api/v1/"; // given by Kaushal sir, D:12/3/2019
+
+    //public static final String BASE_URL = "http://horecafy.aipxperts.com:4201/api/v1/";
     private static Retrofit retrofit = null;
 
     public static Retrofit getClient(Activity context) {

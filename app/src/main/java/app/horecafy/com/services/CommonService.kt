@@ -174,6 +174,7 @@ object CommonService {
         val createRequest = object : StringRequest(Request.Method.GET, url, Response.Listener { json ->
             val response = Gson().fromJson(json, FamilyResponse::class.java)
             if (response.error.isNullOrEmpty()) {
+                Log.e("AAAAAAAAAAAAA","Family : : "+response.data)
                 complete(true, response.data)
             } else {
                 Log.d(Constants.TAG, "Could not get families: $response.error")

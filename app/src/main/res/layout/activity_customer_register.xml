@@ -231,7 +231,7 @@
             <EditText
                 android:id="@+id/editProvince"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="49dp"
                 android:cursorVisible="false"
                 android:editable="false"
                 android:focusable="false"
@@ -240,7 +240,28 @@
                 app:layout_constraintStart_toStartOf="@+id/textProvince"
                 app:layout_constraintTop_toBottomOf="@+id/textProvince" />
 
-          <!--  <TextView
+
+            <LinearLayout
+                android:id="@+id/lv_Terms"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/editProvince"
+                app:layout_constraintStart_toStartOf="@+id/editProvince"
+                app:layout_constraintTop_toBottomOf="@+id/editProvince">
+                <CheckBox
+                    android:id="@+id/chkCTerms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tvCTerms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Acepto la Política de privacidad y Términos y Condiciones"/>
+
+            </LinearLayout>
+
+            <!--  <TextView
                 android:id="@+id/textCountry"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -258,6 +279,8 @@
                 app:layout_constraintStart_toStartOf="@+id/textCountry"
                 app:layout_constraintTop_toBottomOf="@+id/textCountry" />-->
 
+
+
             <Button
                 android:id="@+id/buttonSave"
                 style="@style/Button"
@@ -271,7 +294,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editProvince" />
+                app:layout_constraintTop_toBottomOf="@+id/lv_Terms" />
         </android.support.constraint.ConstraintLayout>
 
     </ScrollView>

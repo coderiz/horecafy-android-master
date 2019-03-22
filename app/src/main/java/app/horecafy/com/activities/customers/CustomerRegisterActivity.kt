@@ -3,9 +3,13 @@ package app.horecafy.com.activities.customers
 import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
+import android.text.SpannableString
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
 import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
@@ -23,7 +27,6 @@ import app.horecafy.com.util.UiHelpers
 import app.horecafy.com.util.Validators
 import kotlinx.android.synthetic.main.activity_customer_register.*
 
-
 class CustomerRegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +40,32 @@ class CustomerRegisterActivity : AppCompatActivity() {
                 // TODO Error loading typeofbusiness
             }
         })
+        val ss = SpannableString("Acepto la Política de privacidad y Términos y Condiciones")
 
+        val terms = object : ClickableSpan() {
+            override fun onClick(widget: View) {
+                Log.e("OOO", "Click terms")
+                val browserIntent = Intent(Intent.ACTION_VIEW)
+                browserIntent.data = Uri.parse("http://horecafy.com/acceso-clientes/")
+                startActivity(browserIntent)
+            }
+        }
+
+        val privacy = object : ClickableSpan() {
+            override fun onClick(widget: View) {
+                Log.e("OOO", "Click privacy")
+                val browserIntent = Intent(Intent.ACTION_VIEW)
+                browserIntent.data = Uri.parse("http://horecafy.com/politica-de-privacidad/")
+                startActivity(browserIntent)
+            }
+        }
+
+
+        ss.setSpan(privacy, 10, 32, 0)
+        ss.setSpan(terms, 35, 57, 0)
+        tvCTerms.setMovementMethod(LinkMovementMethod.getInstance())
+
+        tvCTerms.setText(ss, TextView.BufferType.SPANNABLE)
         var Provincia: ArrayList<String> = Constants.GetProvincia(this@CustomerRegisterActivity)
         editProvince.setOnClickListener(View.OnClickListener {
            if(Provincia.size>0){
@@ -231,6 +259,12 @@ class CustomerRegisterActivity : AppCompatActivity() {
               requestFocus(editProvince, isValid)
               isValid = false
           }
+
+        if(!chkCTerms.isChecked){
+            Toast.makeText(this, "Por favor, consulte los términos y condiciones", Toast.LENGTH_LONG).show()
+            isValid = false
+        }
+
         /*   if (country.isNullOrEmpty()) {
                editCountry.setError("Este campo es obligatorio")
                requestFocus(editCountry, isValid)

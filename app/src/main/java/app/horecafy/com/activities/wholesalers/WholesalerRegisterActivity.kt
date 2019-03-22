@@ -2,13 +2,18 @@ package app.horecafy.com.activities.wholesalers
 
 import android.content.DialogInterface
 import android.content.Intent
+import android.net.Uri
 import android.opengl.ETC1.isValid
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
+import android.text.SpannableString
 import android.text.TextUtils
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
 import android.util.Log
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import app.horecafy.com.R
 import app.horecafy.com.activities.MainActivity
@@ -34,7 +39,34 @@ class WholesalerRegisterActivity : AppCompatActivity() {
             }else{
                 Constants.ShowAlertDialog(this)
             }
+
         })
+
+        val ss = SpannableString("Acepto la Política de privacidad y Términos y Condiciones")
+
+        val terms = object : ClickableSpan() {
+            override fun onClick(widget: View) {
+                Log.e("OOO", "Click terms")
+                val browserIntent = Intent(Intent.ACTION_VIEW)
+                browserIntent.data = Uri.parse("http://horecafy.com/acceso-clientes/")
+                startActivity(browserIntent)
+            }
+        }
+
+        val privacy = object : ClickableSpan() {
+            override fun onClick(widget: View) {
+                Log.e("OOO", "Click privacy")
+                val browserIntent = Intent(Intent.ACTION_VIEW)
+                browserIntent.data = Uri.parse("http://horecafy.com/politica-de-privacidad/")
+                startActivity(browserIntent)
+            }
+        }
+
+
+        ss.setSpan(privacy, 10, 32, 0)
+        ss.setSpan(terms, 35, 57, 0)
+        tvWTerms.setMovementMethod(LinkMovementMethod.getInstance())
+        tvWTerms.setText(ss, TextView.BufferType.SPANNABLE)
 
         buttonSave.setOnClickListener(View.OnClickListener {
             UiHelpers.showProgessBar(window, progressBar)
@@ -231,7 +263,10 @@ class WholesalerRegisterActivity : AppCompatActivity() {
             requestFocus(editProvince, isValid)
             isValid = false
         }
-
+        if (!chkWTerms.isChecked){
+            Toast.makeText(this, "Por favor, consulte los términos y condiciones", Toast.LENGTH_LONG).show()
+            isValid = false
+        }
         /* if (country.isNullOrEmpty()) {
              editCountry.setError("Este campo es obligatorio")
              requestFocus(editCountry, isValid)

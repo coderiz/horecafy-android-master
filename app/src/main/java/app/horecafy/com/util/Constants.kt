@@ -157,7 +157,6 @@ class Constants {
                                     for (i in 0..(jsonArray.length() - 1)) {
                                         val provinceName = jsonArray.getJSONObject(i)
                                         Provincia.add(provinceName.getString("province"))
-
                                     }
                                 }
                                 Log.e("LLLLLLLLL","Provincia Name Array: "+Provincia)
